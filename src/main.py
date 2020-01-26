@@ -57,7 +57,7 @@ def crypt(read_file, msg, e, n):
     for i in range(end):
         m = msg[i]
         #fórmula padrao para criptografrar
-        cryptMsg += str((alfa.index(m) ** e) % n)
+        cryptMsg += str(pow((alfa.index(m) + 2), e, n)) # pois estamos indexando do 2 ao 28 (precisamos avançar 2 unidades)
         if(i + 1 < end):
             cryptMsg += ' ' #separador, para saber quem é quem
     try:
@@ -86,7 +86,7 @@ def decrypt(cryptMsg, d, n):
             i += 1
         i += 1
         current = int (current)
-        decryptMsg += alfa[(current ** d) % n]
+        decryptMsg += alfa[pow(current, d, n) - 2] # pois estavamos indexando do 2 ao 28 (precisamos voltar 2 indices)
     try:
         file = open("DecryptFile.txt", "w")
         file.write(decryptMsg)

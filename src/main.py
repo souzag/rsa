@@ -59,7 +59,7 @@ def crypt(read_file, msg, e, n):
         #fórmula padrao para criptografrar
         cryptMsg += str((alfa.index(m) ** e) % n)
         if(i + 1 < end):
-            cryptMsg += ',' #separador, para saber quem é quem
+            cryptMsg += ' ' #separador, para saber quem é quem
     try:
         crypt_file = open("EncryptFile.txt", "w")
         crypt_file.write(cryptMsg)
@@ -81,7 +81,7 @@ def decrypt(cryptMsg, d, n):
     end = len(cryptMsg)
     while i < end:
         current = ""
-        while i < end and cryptMsg[i] != ',':
+        while i < end and cryptMsg[i] != ' ':
             current += cryptMsg[i]
             i += 1
         i += 1
@@ -129,8 +129,8 @@ def init():
             print("Chave publica gerada com sucesso!")
 
         elif operation == 2:
-            n = p * q
-            FiN = int((p - 1) * (q - 1))
+            n = int(input("Informe o primeiro item da chave pública :"))
+            e = int(input("Informe o segundo item da chave pública :"))
             file_path = input("Informe o diretório do arquivo a ser criptografado: ")
             if(correct_file(file_path, alfa)):
                 try:
@@ -144,7 +144,13 @@ def init():
                     print("Arquivo criptografado com sucesso")
                 else:
                     print("Houve um erro na criptografia do arquivo")
+            else:
+                print("Houve um erro na validação do arquivo, tente novamente")
         elif operation == 3:
+            p = int(input("Informe o número primo p: "))
+            q = int(input("Informe o número primo q: "))
+            e = int(input("Informe o número [e], tal que, [e] seja co-primo com o produto (p-1).(q-1): "))
+            FiN = (p - 1) * (q - 1)
             n = p * q
             d = findInverse(e, FiN)
             file_path = input("Informe o diretório do arquivo a ser descriptografado:")

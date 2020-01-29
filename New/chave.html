@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="chave.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <br>
+    <div class="container text-primary">
+        <button class="btn btn-info"><a style="color:white" href="index.html">Voltar</a> </button>
+        <div class="jumbotron">
+            <h2>Gerar chave pública</h2>
+        </div>
+        <br>
+        <label>Informe o número primo p: </label>
+        <input id="primo_p" type="text" placeholder=" Digite Aqui" />
+        <br>
+        <label>Informe o número primo q: </label>
+        <input id="primo_q" type="text" placeholder=" Digite Aqui" />
+        <br>
+        <label>Informe o número e, que seja co-primo com o produto (p-1).(q-1): </label>
+        <input id="numero_e" type="text" placeholder=" Digite Aqui" />
+        <br>
+        <td>
+            <button class="btn btn-info" onclick="getChave()">Calcular</button>
+        </td>
+
+    </div>
+<body>

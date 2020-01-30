@@ -1,4 +1,4 @@
-# RSA não oficial
+# RSA
 Para rodar o programa é necessário ter instalado os seguintes programas: Phyton 3, Node.js, Npm.
 
 Apos isso, para que as dependências do electron sejam instaladas basta apenas abrir o terminal dentro da pasta "New" e rodar o seguinte comando:

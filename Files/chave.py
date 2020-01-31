@@ -11,12 +11,6 @@ def create_public_key_file(n, e, p, q):
         file.write(str(n))
         file.write(' ')
         file.write(str(e))
-        file.write(' ')
-        file.write('p = ')
-        file.write(str(p))
-        file.write(' ')
-        file.write('q = ')
-        file.write(str(q))
         file.close()
 
     except FileNotFoundError:

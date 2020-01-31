@@ -4,13 +4,19 @@ p = int(sys.argv[1])
 q = int(sys.argv[2])
 e = int(sys.argv[3])
 
-def create_public_key_file(n, e):
+def create_public_key_file(n, e, p, q):
     
     try:
         file = open("PublicKey.txt", "w")
         file.write(str(n))
         file.write(' ')
         file.write(str(e))
+        file.write(' ')
+        file.write('p = ')
+        file.write(str(p))
+        file.write(' ')
+        file.write('q = ')
+        file.write(str(q))
         file.close()
 
     except FileNotFoundError:
@@ -43,6 +49,6 @@ def init():
     elif gcd(e, FiN) != 1 :
         print('não é co-primo com o produto (p-1).(q-1)')
     else :
-        create_public_key_file(n, e)
+        create_public_key_file(n, e , p , q)
         print('Chave publica gerada com sucesso!')
 init()

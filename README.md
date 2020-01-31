@@ -10,7 +10,11 @@
     Danilo Vasconcelos Freire               - dvf@ic.ufal.br
 
 ## Execução
-Para rodar o programa é necessário ter instalado os seguintes programas: Phyton 3, Node.js, Npm.
+Para rodar o programa é necessário instalar o npm com o seguinte comando:
+
+```c
+sudo apt install npm
+```
 
 Depois, deve-se clonar este repositório
 

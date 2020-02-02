@@ -1,6 +1,6 @@
 import sys
 
-alfa = ['A', 'B', 'C', 'D', 'E','F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ']
+alfa = {'A' : 2, 'B' : 3, 'C' : 4, 'D' : 5, 'E' : 6,'F' : 7, 'G' : 8, 'H' : 9, 'I' : 10, 'J' : 11, 'K' : 12, 'L' : 13, 'M' : 14, 'N' : 15, 'O' : 16, 'P' : 17, 'Q' : 18, 'R' : 19, 'S' : 20, 'T' : 21, 'U' : 22, 'V' : 23, 'W' : 24, 'X' : 25, 'Y' : 26, 'Z' : 27, ' ' : 28}
 
 p = int(sys.argv[1])
 q = int(sys.argv[2])
@@ -39,6 +39,7 @@ def findInverse(a, m) :
 
     return x 
 def decrypt(cryptMsg, d, n):
+    reverse_alfa = dict(map(reversed, alfa.items())) #trocando chave por valor
     decryptMsg = ""
     i = 0
     end = len(cryptMsg)
@@ -49,7 +50,7 @@ def decrypt(cryptMsg, d, n):
             i += 1
         i += 1
         current = int (current)
-        decryptMsg += alfa[pow(current, d, n) - 2] # pois estavamos indexando do 2 ao 28 (precisamos voltar 2 indices)
+        decryptMsg += reverse_alfa[pow(current, d, n)]
     try:
         file = open("DecryptFile.txt", "w")
         file.write(decryptMsg)

@@ -20,7 +20,7 @@ function getDecrip()
         args : [num_p , num_q , num_e , diretorio]
     }
 
-    var key = new PythonShell('descriptografar.py', opcoes);
+    var key = new PythonShell('Descriptografar/descriptografar.py', opcoes);
 
     key.on('message', function(message) 
     {

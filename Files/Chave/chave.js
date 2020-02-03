@@ -18,7 +18,7 @@ function getChave()
         args : [primo_p , primo_q , numero_e]
     }
 
-    var key = new PythonShell('chave.py', opcoes);
+    var key = new PythonShell('Chave/chave.py', opcoes);
 
     key.on('message', function(message) 
     {

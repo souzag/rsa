@@ -18,7 +18,7 @@ function getCrip()
         args : [primeiro_item , segundo_item , diretorio]
     }
 
-    var key = new PythonShell('criptografar.py', opcoes);
+    var key = new PythonShell('Criptografar/criptografar.py', opcoes);
 
     key.on('message', function(message) 
     {
